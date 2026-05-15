@@ -1,0 +1,39 @@
+{{/*
+  Content adapter for YAML-backed concepts.
+
+  Each sibling *.yaml file is treated as canonical data. The adapter creates a
+  Hugo page for each object at /concepts/{slug}/ and passes the full concept
+  object through .Params.concept for templates to render.
+*/}}
+{{ $dir := "content/concepts" }}
+{{ range os.ReadDir $dir }}
+  {{ if and (not .IsDir) (strings.HasSuffix .Name ".yaml") }}
+    {{ $sourcePath := path.Join $dir .Name }}
+    {{ $concept := os.ReadFile $sourcePath | transform.Unmarshal }}
+    {{ $slug := default (path.BaseName .Name) $concept.slug }}
+    {{ $title := default $slug $concept.title.english }}
+    {{ $content := dict
+      "mediaType" "text/markdown"
+      "value" (default "" $concept.plain_english)
+    }}
+    {{ $params := dict
+      "concept" $concept
+      "concept_id" $concept.id
+      "source_path" $sourcePath
+      "relationships" (default slice $concept.relationships)
+      "podcasts" (default slice $concept.podcasts)
+      "images" (default slice $concept.images)
+    }}
+    {{ $page := dict
+      "content" $content
+      "kind" "page"
+      "layout" "single"
+      "params" $params
+      "path" $slug
+      "title" $title
+      "type" "concept"
+    }}
+    {{ $.AddPage $page }}
+  {{ end }}
+{{ end }}
+

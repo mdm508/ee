@@ -1,0 +1,86 @@
+id: 9
+slug: aardvark
+
+title:
+  english: Aardvark
+  chinese_traditional: 土豚
+  zhuyin: ㄊㄨˇ ㄊㄨㄣˊ
+
+pronunciation:
+  ipa: "/ˈɑːrdˌvɑːrk/"
+  readable: "ARD-vark"
+
+origin:
+  language: Afrikaans
+  meaning: earth pig
+
+summary: >
+  Nocturnal African mammal that feeds mainly on termites and ants.
+
+plain_english: >
+  The aardvark is a heavily built mammal from sub-Saharan Africa
+  that digs into termite and ant nests using strong claws and a sticky tongue.
+
+memory_hook: >
+  The "earth pig" that vacuums termites at night.
+
+background:
+  - >
+    Aardvarks are specialized insect-eating mammals adapted for digging.
+
+locations:
+  - sub-saharan-africa
+  - savanna
+
+dates:
+  - year: 1766
+    event: Formal scientific description of Orycteropus afer
+
+cause_effect:
+  - cause: Strong claws
+    effect: Opens termite mounds
+
+technical: >
+  The aardvark is a nocturnal mammal specialized for feeding
+  on ants and termites.
+
+compare:
+  - concept: anteater
+    difference: Similar feeding strategy but unrelated evolution
+
+examples:
+  - >
+    An aardvark may consume thousands of termites in one night.
+
+mistakes:
+  - >
+    Aardvarks are not closely related to pigs.
+
+quiz:
+  questions:
+    - type: qa
+      prompt: Why are aardvarks nocturnal?
+      answer: >
+        They avoid daytime heat and search for insects at night.
+    - type: cloze
+      text: >
+        Aardvarks mainly feed on {{c1::termites}} and {{c2::ants}}.
+
+compression:
+  chinese: >
+    土豚利用長舌捕食＿＿＿（白蟻 ㄅㄞˊ ㄧˇ：群居昆蟲）。
+  answer: 白蟻
+  english: >
+    Aardvarks are nocturnal mammals specialized for termite feeding.
+
+relationships:
+  - mammals
+  - termites
+  - sub-saharan-africa
+
+podcasts: []
+
+images:
+  - url: https://example.com/aardvark1.jpg
+    caption: Aardvark digging
+

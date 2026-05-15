@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <section class="section">
+    <div class="section-heading">
+      <h1>{{ .Title }}</h1>
+      <p>Generated from YAML files in <code>content/concepts</code>.</p>
+    </div>
+    <div class="concept-list">
+      {{ range sort (where site.RegularPages "Type" "concept") "Title" }}
+        {{ $concept := .Params.concept }}
+        <article>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ with $concept.title.chinese_traditional }}
+            <p class="muted">{{ . }}{{ with $concept.title.zhuyin }} · {{ . }}{{ end }}</p>
+          {{ end }}
+          {{ with $concept.summary }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
+

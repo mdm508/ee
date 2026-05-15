@@ -1,0 +1,29 @@
+# Hugo is intentionally used as the rendering layer only.
+# Canonical educational content lives in content/concepts/*.yaml and is converted
+# into pages by content/concepts/_content.gotmpl at build time.
+baseURL: "https://mdm508.github.io/ee/"
+languageCode: "en-us"
+title: "Easy Encyclopedia"
+
+disableKinds:
+  - taxonomy
+  - term
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+  page:
+    - HTML
+
+params:
+  description: "A semantic encyclopedia generated from YAML concept objects."
+  repository: "https://github.com/mdm508/ee"
+
