@@ -1,0 +1,171 @@
+slug: a-priori-knowledge
+
+title:
+  english: A Priori Knowledge
+  chinese_traditional: 先驗知識
+  zhuyin: ㄒㄧㄢ ㄧㄢˋ ㄓ ㄕˋ
+
+pronunciation:
+  ipa: /eɪ praɪˈɔːri ˈnɒlɪdʒ/
+  readable: eye pry-OR-ee knowledge
+
+origin:
+  language: Latin
+  meaning: "from what comes before"
+
+summary: >
+  A priori knowledge is knowledge that can be known independently of
+  particular sensory experience. It contrasts with a posteriori knowledge,
+  which depends on observation or experience. Mathematics and logic are
+  classic examples of a priori knowledge because they are considered
+  necessary and universal truths.
+
+plain_english: >
+  A priori knowledge is knowledge gained through reasoning rather than
+  through direct experience. For example, mathematical truths like
+  "2 + 2 = 4" do not require experiments or observation to be known.
+  Philosophers use the concept to explain how humans can know certain
+  truths before or without experience.
+
+memory_hook: >
+  "Prior" means earlier. A priori knowledge comes before experience.
+
+background:
+  - >
+    Plato argued that humans recollect eternal truths that the soul knew
+    before birth.
+  - >
+    Augustine adapted Platonic ideas into Christian philosophy through
+    divine illumination.
+  - >
+    René Descartes proposed that some ideas are innate in the human mind.
+  - >
+    Immanuel Kant argued that the mind structures experience using forms
+    such as space, time, and causality.
+  - >
+    Saul Kripke later challenged the idea that all necessary truths are
+    knowable a priori.
+
+location: >
+  The concept developed mainly within European philosophy, especially in
+  Ancient Greece, medieval scholasticism, Enlightenment philosophy, and
+  modern analytic philosophy.
+
+dates:
+  - year: "4th century BCE"
+    event: Plato develops theories of recollection and eternal forms.
+  - year: "13th-14th centuries"
+    event: Medieval logicians formalize a priori and a posteriori reasoning.
+  - year: "1641"
+    event: Descartes publishes Meditations on First Philosophy.
+  - year: "1781"
+    event: Kant publishes Critique of Pure Reason.
+  - year: "1970s"
+    event: Saul Kripke critiques traditional assumptions about necessity and experience.
+
+cause_effect:
+  - cause: Humans can reason abstractly.
+    effect: Mathematics and logic appear universally true.
+  - cause: Experience can be uncertain.
+    effect: Philosophers search for knowledge independent of experience.
+  - cause: Kant believes the mind structures perception.
+    effect: Space, time, and causality become conditions for experience.
+  - cause: Kripke challenges Kantian assumptions.
+    effect: Necessity and experience become separated in new philosophical ways.
+
+technical: >
+  Kant distinguished between analytic judgments, which are true by
+  definition, and synthetic judgments, which add new information.
+  He argued that mathematics represents synthetic a priori knowledge:
+  knowledge that extends understanding while remaining independent of
+  sensory experience.
+
+compare:
+  - concept: A posteriori knowledge
+    difference: Depends on experience and observation.
+  - concept: Rationalism
+    difference: Emphasizes reason as the primary source of knowledge.
+  - concept: Empiricism
+    difference: Emphasizes sensory experience as the basis of knowledge.
+  - concept: Necessary truth
+    difference: Cannot be otherwise.
+  - concept: Contingent truth
+    difference: Could have been different under other conditions.
+
+examples:
+  - >
+    "7 + 5 = 12" is usually considered a priori knowledge.
+  - >
+    Logical laws such as non-contradiction are considered a priori.
+  - >
+    Definitions like "triangles have three sides" are analytic a priori truths.
+  - >
+    Kant believed space and time are forms imposed by the mind onto experience.
+
+mistakes:
+  - >
+    Confusing a priori knowledge with something merely obvious or simple.
+  - >
+    Assuming all necessary truths are knowable a priori.
+  - >
+    Thinking a priori automatically means innate.
+  - >
+    Confusing logical truths with empirical observations.
+
+links:
+  - epistemology
+  - metaphysics
+  - immanuel-kant
+  - rationalism
+  - empiricism
+
+quiz:
+  questions:
+    - type: qa
+      prompt: What is the difference between a priori and a posteriori knowledge?
+      answer: >
+        A priori knowledge is independent of experience, while a posteriori
+        knowledge depends on experience.
+
+    - type: qa
+      prompt: Which philosopher made a priori knowledge central in Critique of Pure Reason?
+      answer: Immanuel Kant.
+
+    - type: qa
+      prompt: What kind of judgment did Kant believe mathematics represents?
+      answer: Synthetic a priori judgment.
+
+    - type: qa
+      prompt: Which philosopher argued that some necessary truths are only knowable a posteriori?
+      answer: Saul Kripke.
+
+    - type: cloze
+      text: >
+        The Latin phrase a priori means "from what is [before]."
+
+    - type: cloze
+      text: >
+        Plato believed learning was a form of [recollection].
+
+    - type: cloze
+      text: >
+        Descartes argued that some ideas are [innate].
+
+    - type: cloze
+      text: >
+        Kant claimed the mind imposes structures such as space and [causality]
+        onto experience.
+
+compression:
+  chinese: >
+    康德認為，人類能擁有某些不依賴經驗的「先驗」知識，因為心靈會主動組織[經驗]。
+
+  answer: 經驗
+
+  english: >
+    Kant argued that a priori knowledge is possible because the human mind
+    actively structures experience itself.
+
+podcasts: []
+
+images: []
