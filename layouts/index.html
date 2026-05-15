@@ -1,29 +1,18 @@
 {{ define "main" }}
   {{ $concepts := where site.RegularPages "Type" "concept" }}
-  <section class="hero">
-    <p class="eyebrow">Semantic encyclopedia</p>
-    <h1>Structured concepts, rendered as readable lessons.</h1>
-    <p>
-      Each article is generated from a canonical YAML object, keeping educational
-      content portable for web, graph, audio, quiz, and app experiences.
-    </p>
-  </section>
-
-  <section class="section">
+  <section class="section home-list">
     <div class="section-heading">
       <h2>Concepts</h2>
-      <p>{{ len $concepts }} generated articles</p>
+      <p>{{ len $concepts }} article{{ if ne (len $concepts) 1 }}s{{ end }}</p>
     </div>
-    <div class="concept-grid">
+    <div class="concept-list">
       {{ range sort $concepts "Title" }}
         {{ $concept := .Params.concept }}
-        <article class="concept-card">
-          <a href="{{ .RelPermalink }}">
-            <span>{{ .Title }}</span>
-            {{ with $concept.title.chinese_traditional }}
-              <small>{{ . }}</small>
-            {{ end }}
-          </a>
+        <article>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ with $concept.title.chinese_traditional }}
+            <p class="muted">{{ . }}{{ with $concept.title.zhuyin }} · {{ . }}{{ end }}</p>
+          {{ end }}
           {{ with $concept.summary }}
             <p>{{ . }}</p>
           {{ end }}
@@ -32,4 +21,3 @@
     </div>
   </section>
 {{ end }}
-

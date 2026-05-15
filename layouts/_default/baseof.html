@@ -24,6 +24,9 @@
     <footer class="site-footer">
       <p>YAML-first semantic learning content rendered by Hugo.</p>
     </footer>
+    {{ with resources.Get "js/cloze.js" }}
+      {{ $js := . | minify | fingerprint }}
+      <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    {{ end }}
   </body>
 </html>
-
