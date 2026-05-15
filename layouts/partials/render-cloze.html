@@ -1,1 +1,1 @@
-{{- . | replaceRE "\\{\\{c[0-9]+::([^}]+)\\}\\}" "<button class=\"cloze-reveal\" type=\"button\" data-answer=\"$1\" aria-label=\"Reveal cloze answer\">[...]</button>" | safeHTML -}}
+{{- . | replaceRE "\\[([^\\]]+)\\]" "<button class=\"cloze-reveal\" type=\"button\" data-answer=\"$1\" aria-label=\"Reveal cloze answer\">[...]</button>" | safeHTML -}}

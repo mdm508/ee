@@ -20,9 +20,15 @@
         {{ end }}
       </header>
 
-      {{ with $concept.images }}
+      {{ if or $concept.thumbnail.local $concept.images }}
         <div class="topic-media" aria-label="Images for {{ $concept.title.english }}">
-          {{ range . }}
+          {{ with $concept.thumbnail.local }}
+            <figure class="topic-media-primary">
+              <img src="{{ . | relURL }}" alt="{{ $concept.title.english }} thumbnail" loading="eager">
+              <figcaption>{{ $concept.title.english }}</figcaption>
+            </figure>
+          {{ end }}
+          {{ range $concept.images }}
             <figure>
               <img src="{{ .url }}" alt="{{ default "Concept image" .caption }}" loading="eager">
               {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
@@ -44,6 +50,26 @@
       <section class="content-block">
         <h2>Background</h2>
         {{ range . }}<p>{{ . }}</p>{{ end }}
+      </section>
+    {{ end }}
+
+    {{ with $concept.location }}
+      <section class="content-block">
+        <h2>Location</h2>
+        <div class="two-column compact-columns">
+          {{ with .regions }}
+            <div>
+              <h3>Regions</h3>
+              <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+            </div>
+          {{ end }}
+          {{ with .habitats }}
+            <div>
+              <h3>Habitats</h3>
+              <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+            </div>
+          {{ end }}
+        </div>
       </section>
     {{ end }}
 
@@ -102,6 +128,13 @@
     {{ with $concept.examples }}
       <section class="content-block">
         <h2>Examples</h2>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </section>
+    {{ end }}
+
+    {{ with $concept.retrieval }}
+      <section class="content-block">
+        <h2>Retrieval</h2>
         <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
       </section>
     {{ end }}

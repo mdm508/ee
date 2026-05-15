@@ -31,15 +31,109 @@ Build the production site with:
 hugo --minify --printPathWarnings
 ```
 
-## Adding a Concept
+## Concept Schema
 
-Create a new YAML file in `content/concepts`, for example:
+Use one YAML file per concept. The filename should match the slug:
 
 ```text
-content/concepts/photosynthesis.yaml
+content/concepts/a-priori.yaml
 ```
 
-Use a stable `slug`, a stable `id`, localized title fields, summaries, quiz objects, relationships, podcast IDs, and image references. The next Hugo build automatically creates the article page.
+The `slug` is the canonical permanent identifier. Slugs must be unique and use lowercase words separated by dashes. Relationships are flat lists of concept slugs. Podcasts are separate semantic objects referenced by slug.
+
+```yaml
+slug:
+
+title:
+  english:
+  chinese_traditional:
+  zhuyin:
+
+pronunciation:
+  ipa:
+  readable:
+
+origin:
+  language:
+  meaning:
+
+thumbnail:
+  local:
+
+summary:
+plain_english:
+memory_hook:
+
+background:
+  - >
+
+location:
+  regions:
+    -
+  habitats:
+    -
+
+dates:
+  - year:
+    event:
+
+cause_effect:
+  - cause:
+    effect:
+
+technical:
+
+compare:
+  - concept:
+    difference:
+
+examples:
+  - >
+
+mistakes:
+  - >
+
+retrieval:
+  - >
+
+quiz:
+  questions:
+    - type: qa
+      prompt:
+      answer:
+    - type: cloze
+      text: >
+
+compression:
+  chinese:
+  answer:
+  english:
+
+relationships:
+  -
+
+podcasts:
+  -
+
+images:
+  - url:
+    caption:
+```
+
+Question rules:
+
+- QA questions must be full natural-language questions ending with question marks.
+- QA questions must include answers.
+- Cloze questions must test different facts from QA questions.
+- Clozes use bracket syntax, for example `[word]`.
+- Clozes should usually hide only one important word.
+
+Media rules:
+
+- The local thumbnail lives under `static/thumbnails` and is referenced as `thumbnails/example.jpg` or `thumbnails/example.webp`.
+- Additional article images can be externally hosted URLs.
+
+The next Hugo build automatically creates or updates the article page.
 
 ## Future Extensions
 
@@ -48,4 +142,3 @@ Use a stable `slug`, a stable `id`, localized title fields, summaries, quiz obje
 - Export quiz and cloze data for spaced repetition.
 - Generate podcast feeds from `podcasts` IDs.
 - Add bilingual routes or app-facing JSON outputs without changing article authoring.
-
