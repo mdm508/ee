@@ -18,9 +18,8 @@
     }}
     {{ $params := dict
       "concept" $concept
-      "concept_id" $concept.id
       "source_path" $sourcePath
-      "relationships" (default slice $concept.relationships)
+      "links" (default slice $concept.links)
       "podcasts" (default slice $concept.podcasts)
       "images" (default slice $concept.images)
     }}
@@ -36,4 +35,3 @@
     {{ $.AddPage $page }}
   {{ end }}
 {{ end }}
-

@@ -1,5 +1,3 @@
-id: 1
-
 slug: a-priori
 
 title:
@@ -14,9 +12,6 @@ pronunciation:
 origin:
   language: Latin
   meaning: from what comes before
-
-thumbnail:
-  local: thumbnails/a-priori.jpg
 
 summary: >
   A priori knowledge is knowledge that does not depend on specific experiences.
@@ -43,13 +38,10 @@ background:
     of knowledge.
 
 location:
-  regions:
-    - europe
-    - germany
-
-  habitats:
-    - philosophy
-    - epistemology
+  - europe
+  - germany
+  - philosophy
+  - epistemology
 
 dates:
   - year: 1200
@@ -94,13 +86,6 @@ mistakes:
   - >
     Not all philosophers agree on which kinds of knowledge are truly a priori.
 
-retrieval:
-  - >
-    Explain the difference between knowledge from reasoning and knowledge from observation.
-
-  - >
-    Name one philosopher strongly associated with the modern use of a priori knowledge.
-
 quiz:
   questions:
 
@@ -138,7 +123,7 @@ compression:
   english: >
     A priori knowledge is knowledge gained independently of particular experience.
 
-relationships:
+links:
   - epistemology
   - a-posteriori
   - empiricism

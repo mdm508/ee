@@ -217,13 +217,6 @@ nav a:hover {
   letter-spacing: 0;
 }
 
-.content-block h3 {
-  margin: 0 0 8px;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0;
-}
-
 .content-block p:last-child,
 .content-block ul:last-child,
 .content-block ol:last-child,
@@ -241,14 +234,6 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-}
-
-.compact-columns {
-  gap: 28px;
-}
-
-.compact-columns ul {
-  margin-top: 0;
 }
 
 dt {
@@ -272,10 +257,6 @@ dd {
 .topic-media figure {
   flex: 0 0 min(100%, 260px);
   scroll-snap-align: start;
-}
-
-.topic-media .topic-media-primary {
-  flex-basis: min(100%, 320px);
 }
 
 .topic-media img {

@@ -14,7 +14,7 @@ This keeps the repository friendly to AI-assisted content generation: adding or 
 - `content/concepts/_content.gotmpl` is the only translation layer from data to Hugo pages.
 - `layouts/concept/single.html` renders a concept object without hardcoding specific articles.
 - `data/generated/graph.json` is reserved for derived semantic graph data.
-- `static/images` and `static/audio` hold local media, while concept YAML can also reference external assets.
+- `static/audio` holds local audio files, while concept YAML embeds external article images by URL.
 - `.github/workflows/pages.yml` builds and deploys the static site to GitHub Pages on every push to `main`.
 
 ## Local Development
@@ -39,7 +39,7 @@ Use one YAML file per concept. The filename should match the slug:
 content/concepts/a-priori.yaml
 ```
 
-The `slug` is the canonical permanent identifier. Slugs must be unique and use lowercase words separated by dashes. Relationships are flat lists of concept slugs. Podcasts are separate semantic objects referenced by slug.
+The `slug` is the canonical permanent identifier. Slugs must be unique and use lowercase words separated by dashes. Links are flat semantic concept links. Podcasts are separate semantic objects referenced by slug.
 
 ```yaml
 slug:
@@ -57,9 +57,6 @@ origin:
   language:
   meaning:
 
-thumbnail:
-  local:
-
 summary:
 plain_english:
 memory_hook:
@@ -68,10 +65,7 @@ background:
   - >
 
 location:
-  regions:
-    -
-  habitats:
-    -
+  -
 
 dates:
   - year:
@@ -93,9 +87,6 @@ examples:
 mistakes:
   - >
 
-retrieval:
-  - >
-
 quiz:
   questions:
     - type: qa
@@ -109,7 +100,7 @@ compression:
   answer:
   english:
 
-relationships:
+links:
   -
 
 podcasts:
@@ -128,16 +119,18 @@ Question rules:
 - Clozes use bracket syntax, for example `[word]`.
 - Clozes should usually hide only one important word.
 
-Media rules:
+Rendering rules:
 
-- The local thumbnail lives under `static/thumbnails` and is referenced as `thumbnails/example.jpg` or `thumbnails/example.webp`.
-- Additional article images can be externally hosted URLs.
+- Links render as semantic concept navigation.
+- Images render as external embedded image galleries.
+- Podcasts render as linked podcast references.
+- The graph structure itself acts as the glossary/navigation layer.
 
 The next Hugo build automatically creates or updates the article page.
 
 ## Future Extensions
 
-- Generate `data/generated/graph.json` from `relationships`.
+- Generate `data/generated/graph.json` from `links`.
 - Add client-side graph visualization using lightweight JavaScript.
 - Export quiz and cloze data for spaced repetition.
 - Generate podcast feeds from `podcasts` IDs.

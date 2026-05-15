@@ -3,7 +3,7 @@
   <article class="concept-page">
     <section class="concept-hero-area">
       <header class="concept-header">
-        <p class="eyebrow">Concept {{ with $concept.id }}#{{ . }}{{ end }}</p>
+        <p class="eyebrow">Concept</p>
         <h1>{{ $concept.title.english }}</h1>
         <div class="title-row">
           {{ with $concept.title.chinese_traditional }}<span>{{ . }}</span>{{ end }}
@@ -20,15 +20,9 @@
         {{ end }}
       </header>
 
-      {{ if or $concept.thumbnail.local $concept.images }}
+      {{ with $concept.images }}
         <div class="topic-media" aria-label="Images for {{ $concept.title.english }}">
-          {{ with $concept.thumbnail.local }}
-            <figure class="topic-media-primary">
-              <img src="{{ . | relURL }}" alt="{{ $concept.title.english }} thumbnail" loading="eager">
-              <figcaption>{{ $concept.title.english }}</figcaption>
-            </figure>
-          {{ end }}
-          {{ range $concept.images }}
+          {{ range . }}
             <figure>
               <img src="{{ .url }}" alt="{{ default "Concept image" .caption }}" loading="eager">
               {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
@@ -46,6 +40,22 @@
       {{ end }}
     </section>
 
+    {{ with $concept.origin }}
+      <section class="content-block">
+        <h2>Origin</h2>
+        <dl>
+          {{ with .language }}
+            <dt>Language</dt>
+            <dd>{{ . }}</dd>
+          {{ end }}
+          {{ with .meaning }}
+            <dt>Meaning</dt>
+            <dd>{{ . }}</dd>
+          {{ end }}
+        </dl>
+      </section>
+    {{ end }}
+
     {{ with $concept.background }}
       <section class="content-block">
         <h2>Background</h2>
@@ -56,20 +66,7 @@
     {{ with $concept.location }}
       <section class="content-block">
         <h2>Location</h2>
-        <div class="two-column compact-columns">
-          {{ with .regions }}
-            <div>
-              <h3>Regions</h3>
-              <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
-            </div>
-          {{ end }}
-          {{ with .habitats }}
-            <div>
-              <h3>Habitats</h3>
-              <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
-            </div>
-          {{ end }}
-        </div>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
       </section>
     {{ end }}
 
@@ -132,13 +129,6 @@
       </section>
     {{ end }}
 
-    {{ with $concept.retrieval }}
-      <section class="content-block">
-        <h2>Retrieval</h2>
-        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
-      </section>
-    {{ end }}
-
     {{ with $concept.quiz.questions }}
       <section class="content-block">
         <h2>Quiz</h2>
@@ -166,8 +156,8 @@
 
     <div class="two-column">
       <section class="content-block">
-        <h2>Relationships</h2>
-        {{ with $concept.relationships }}
+        <h2>Links</h2>
+        {{ with $concept.links }}
           <ul class="tag-list">
             {{ range . }}
               {{ $related := site.GetPage (printf "/concepts/%s" .) }}
@@ -181,14 +171,18 @@
             {{ end }}
           </ul>
         {{ else }}
-          <p class="muted">No relationships defined yet.</p>
+          <p class="muted">No concept links defined yet.</p>
         {{ end }}
       </section>
 
       <section class="content-block">
         <h2>Podcasts</h2>
         {{ with $concept.podcasts }}
-          <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+          <ul>
+            {{ range . }}
+              <li><a href="{{ printf "/podcasts/%s/" . | relURL }}">{{ . }}</a></li>
+            {{ end }}
+          </ul>
         {{ else }}
           <p class="muted">No podcast references yet.</p>
         {{ end }}
